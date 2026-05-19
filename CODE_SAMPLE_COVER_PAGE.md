@@ -47,7 +47,6 @@ Each topic has a tailored expert-persona prompt that reflects the domain-specifi
 
 The pipeline:
 - Sends sentences to the LLM in batches of 20 to manage token cost
-- Implements prompt caching strategies that reduced token usage by ~50% vs baseline
 - Parses structured JSON output with a fallback extraction strategy
 - Flags sentences over 200 characters as too long for reliable single-sentence scoring
 - Exports both a wide table (score columns appended to original rows) and a long table (one row per sentence, with metadata)
@@ -95,21 +94,6 @@ Stage 3: policy_period_comparison_analysis.py
     Output: comparison tables (CSV + Excel)
             interactive maps and charts (HTML + PNG)
 ```
-
----
-
-### Relevance to the RAD Data Analyst Role
-
-This sample demonstrates capabilities directly relevant to the position:
-
-| JD Requirement | Demonstrated in this sample |
-|---|---|
-| Complex SQL / Python for data analysis | Python ETL, text processing, aggregation pipelines |
-| Building original datasets from disparate sources | Stage 1: structuring 110+ country OCR documents |
-| Data validation before analysis | Stage 2: null checks, length filtering, parse fallbacks |
-| Reproducible methodology | temperature=0 scoring, documented schemas, batch logging |
-| Communicating findings through visualisations | Stage 3: interactive Plotly maps and charts |
-| Translating ambiguous requests into structured data | Regex topic matching; expert-persona prompt design |
 
 ---
 
