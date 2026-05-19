@@ -47,7 +47,6 @@ Each topic has a tailored expert-persona prompt that reflects the domain-specifi
 
 The pipeline:
 - Sends sentences to the LLM in batches of 20 to manage token cost
-- Implements prompt caching strategies that reduced token usage by ~50% vs baseline
 - Parses structured JSON output with a fallback extraction strategy
 - Flags sentences over 200 characters as too long for reliable single-sentence scoring
 - Exports both a wide table (score columns appended to original rows) and a long table (one row per sentence, with metadata)
